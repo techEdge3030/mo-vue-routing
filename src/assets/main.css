@@ -1,0 +1,28 @@
+/* @import './base.css';
+@import "tailwindcss";
+@plugin "daisyui";
+
+body {
+  background-color: #CADADB;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+.description {
+  padding: 12px 24px;
+  background-color: #FEFEFE;
+}
+
+.plan {
+  margin: 8px 0;
+  border: 1px solid transparent;
+}
+
+.active-plan {
+  border: 1px solid #8FA4A3;
+} */
