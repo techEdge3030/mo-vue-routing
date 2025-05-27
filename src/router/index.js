@@ -11,15 +11,17 @@ const routes = [
       ...router.params,
       id: parseInt(router.params.id),
     }),
-  },
-  {
-    path: "/destination/:id/:slug/:experienceSlug",
-    name: "experience.show",
-    component: () => import("@/views/ExperienceShow.vue"),
-    props: (router) => ({
-      ...router.params,
-      id: parseInt(router.params.id),
-    }),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "experience.show",
+        component: () => import("@/views/ExperienceShow.vue"),
+        props: (router) => ({
+          ...router.params,
+          id: parseInt(router.params.id),
+        }),
+      },
+    ],
   },
 ];
 
