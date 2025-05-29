@@ -4,6 +4,19 @@ import sourceData from "@/data.json";
 const routes = [
   { path: "/", name: "Home", component: Home },
   {
+    path: "/protected",
+    name: "protected",
+    component: () => import("@/views/Protected.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/Login.vue"),
+  },
+  {
     path: "/destination/:id/:slug",
     name: "destination.show",
     component: () => import("@/views/DestinationShow.vue"),
@@ -45,5 +58,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+router.beforeEach((to, from) => {
+  console.log(window.user);
+  if (to.meta.requiresAuth && !window.user) {
+    return { name: "login" };
+  }
 });
 export default router;
