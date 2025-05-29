@@ -1,7 +1,7 @@
 <template>
   <section class="destination">
     <h1>{{ destination.name }}</h1>
-    <GoBack />
+    <!-- <GoBack /> -->
     <div class="destination-details">
       <img :src="`/images/${destination.image}`" :alt="destination.name" />
       <p>{{ destination.description }}</p>
@@ -44,9 +44,9 @@ const destination = computed(() => {
 <script>
 import sourceData from "@/data.json";
 import ExperienceCard from "@/components/ExperienceCard.vue";
-import GoBack from "@/components/GoBack.vue";
+// import GoBack from "@/components/GoBack.vue";
 export default {
-  components: { ExperienceCard, GoBack },
+  components: { ExperienceCard },
   props: {
     id: {
       type: Number,
