@@ -13,6 +13,7 @@
     >
       {{ destination.name }}
     </router-link>
+    <router-link to="/login">Login</router-link>
   </div>
 </template>
 <script setup>
