@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/">
+    <AppLink to="/">
       <img src="@/assets/logo.svg" alt="logo" width="30" id="logo" />
-    </router-link>
-    <router-link
+    </AppLink>
+    <AppLink
       v-for="destination in destinations"
       :key="destination.id"
       :to="{
@@ -12,8 +12,9 @@
       }"
     >
       {{ destination.name }}
-    </router-link>
-    <router-link to="/login">Login</router-link>
+    </AppLink>
+    <AppLink to="/login">Dashboard</AppLink>
+    <AppLink to="https://vueschool.io">Vue School</AppLink>
   </div>
 </template>
 <script setup>
